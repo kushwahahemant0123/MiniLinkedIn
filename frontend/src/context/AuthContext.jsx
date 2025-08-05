@@ -2,17 +2,13 @@ import axios from "axios";
 import { createContext, use, useContext, useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { Snackbar, Alert } from '@mui/material';
-import dotenv from 'dotenv';
-
-dotenv.config()
-
 
 export const AuthContext = createContext({});
 
 
 const routes = axios.create(
     {
-        baseURL: `${process.env.BACKEND_URL}/api-v1` || "http://localhost:8000/api-v1",
+        baseURL: `${process.env.REACT_APP_BACKEND_URL}/api-v1` || "http://localhost:8000/api-v1",
 
     }
 );
